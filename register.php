@@ -1,5 +1,5 @@
 <?php
-
+    include ('db.php');
     // Recoje lo que se escribio en el form
     $nombre = $_POST['nombre'];
     $rfc = $_POST['rfc'];
@@ -9,19 +9,8 @@
     $contra = hash('sha512', $contrasena);
 
     // Guarda en la base de datos 'users' lo recojido arriba
-    $query ="INSERT INTO users(nombre, rfc, correo, contrasena)
+    $query ="INSERT INTO users(nombre, ref, correo, contrasena)
             VALUE('$nombre','$rfc','$correo','$contra')";
-
-    // Revisa si se guardo coorectamente la info
-    $ejecutar = mysqli_query($conexion,$query);
-    if($ejecutar) {
-        echo '
-            <script>
-                alert("Almacenado exitosamente");
-                window.location = "index.php";
-            </script>
-        ';
-    }
 
     // Evita que se repitan registros repetidos
     $verificar = mysqli_query($conexion,"SELECT*FROM users WHERE correo='$correo'");
@@ -33,5 +22,16 @@
             </script>
         ';
         exit();
+    }    
+
+    // Revisa si se guardo coorectamente la info
+    $ejecutar = mysqli_query($conexion,$query);
+    if($ejecutar) {
+        echo '
+            <script>
+                alert("Almacenado exitosamente");
+                window.location = "index.php";
+            </script>
+        ';
     }
 ?>

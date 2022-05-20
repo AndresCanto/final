@@ -16,9 +16,7 @@
         $_SESSION['nombre'] = $correo;
         header("location: home.php");
         exit;
-    } 
-    
-    // a lo mejor puedo hacer esto con bootstrap5
+    } // a lo mejor puedo hacer esto con bootstrap5
     else{
         echo '
             <script>
@@ -26,4 +24,6 @@
                 window.location = "index.php";
             </script>
         ';
+        exit;
     }
+?>  

@@ -1,0 +1,30 @@
+body {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.card {
+    margin: 100px auto;
+    padding: 0 5px;
+    width: 100%;
+    max-width: 330px;
+    border-radius: 15px;
+    box-shadow: 10px 5px 5px rgb(53, 47, 47);
+}
+.card-title {
+    margin-top: 1em;
+    font-size: 2em;
+}
+
+.card-title, #link {
+    text-align: center;
+}
+
+input {
+    border-radius: 50px;
+    border: 1px solid grey;
+}
+
+.btn-registro {
+    background-color: #27e660 !important;
+    border: 1px solid #27e660;
+}

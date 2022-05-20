@@ -1,0 +1,24 @@
+.navbar-brand {
+    font-size: 2em;
+    font-weight: 800;
+    margin-left: 1em;
+}
+
+.navbar-nav button {
+    padding: 0;
+    margin-left: 0.5em;
+}
+
+nav {
+    padding: 0 !important;
+}
+
+.container {
+    margin: 5% auto;
+}
+
+.row > div {
+    display: flex;
+    justify-content: center;
+    border: 1px solid black;
+}
