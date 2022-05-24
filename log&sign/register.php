@@ -1,16 +1,16 @@
 <?php
-    include ('db.php');
+    include ('../db/db.php');
     // Recoje lo que se escribio en el form
     $nombre = $_POST['nombre'];
     $rfc = $_POST['rfc'];
     $correo = $_POST['correo'];
     $contrasena = $_POST['contrasena'];
         //Contraseña Encriptada
-    $contra = hash('sha512', $contrasena);
+    //$contra = hash('sha512', $contrasena);
 
     // Guarda en la base de datos 'users' lo recojido arriba
-    $query ="INSERT INTO users(nombre, ref, correo, contrasena)
-            VALUE('$nombre','$rfc','$correo','$contra')";
+    $query ="INSERT INTO users(nombre, rfc, correo, contrasena)
+            VALUE('$nombre','$rfc','$correo','$contrasena')";
 
     // Evita que se repitan registros repetidos
     $verificar = mysqli_query($conexion,"SELECT*FROM users WHERE correo='$correo'");
@@ -18,7 +18,7 @@
         echo '
             <script>
                 alert("Este correo ya esta registrado");
-                window.location = "index.php";
+                window.location = "../index.php";
             </script>
         ';
         exit();
@@ -29,8 +29,8 @@
     if($ejecutar) {
         echo '
             <script>
-                alert("Almacenado exitosamente");
-                window.location = "index.php";
+                alert("Registrado exitosamente, ahora inicie sesion");
+                window.location = "../index.php";
             </script>
         ';
     }

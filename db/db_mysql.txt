@@ -1,0 +1,61 @@
+CREATE DATABASE balanze;
+USE balanze;
+
+CREATE TABLE Users (
+    UserID int auto_increment primary key,
+    nombre VARCHAR(50) NOT NULL,
+    rfc VARCHAR(20) NOT NULL,
+    correo VARCHAR(50) NOT NULL,
+    contrasena VARCHAR(150) NOT NULL
+);
+
+CREATE TABLE Providers ( 
+    ProviderID int auto_increment primary key,
+    nombre VARCHAR(50) NOT NULL, 
+    concepto VARCHAR(20) NOT NULL, 
+    rfc VARCHAR(20) NOT NULL,
+    subtotal FLOAT(30) NOT NULL, 
+    descuento FLOAT(30) NOT NULL, 
+    iva FLOAT(30) NOT NULL,
+    total FLOAT(30) NOT NULL,
+);
+
+CREATE TABLE Outcomes ( 
+    OutcomesID INT NOT NULL AUTO_INCREMENT,
+    UserID INT NOT NULL,
+    ProviderID INT NOT NULL,
+    
+    moneda VARCHAR(10) NOT NULL,
+    mes VARCHAR(10) NOT NULL,
+    PRIMARY KEY (OutcomesID),
+    FOREIGN KEY (UserID) REFERENCES Users(UserID),
+    FOREIGN KEY (ProviderID) REFERENCES Providers(ProviderID)
+);
+
+CREATE TABLE Clients ( 
+    ClientID INT NOT NULL AUTO_INCREMENT,
+    UserID INT NOT NULL,
+    nombre VARCHAR(50) NOT NULL,
+    rfc VARCHAR(20) NOT NULL,
+    cod_postal INT(20) NOT NULL,
+    correo VARCHAR(50) NOT NULL,
+    direccion VARCHAR(50) NOT NULL,
+    PRIMARY KEY (ClientID),
+    FOREIGN KEY (UserID) REFERENCES Users(UserID)
+);
+
+CREATE TABLE Incomes ( 
+    IncomesID INT NOT NULL AUTO_INCREMENT,
+    UserID INT NOT NULL,
+    ClientID INT NOT NULL,
+    num_oc VARCHAR(50) NOT NULL, 
+    num_factura VARCHAR(20) NOT NULL, 
+    subtotal FLOAT(30) NOT NULL, 
+    iva FLOAT(30) NOT NULL,
+    total FLOAT(30) NOT NULL,
+    moneda VARCHAR(10) NOT NULL,
+    mes VARCHAR(10) NOT NULL,
+    PRIMARY KEY (IncomesID),
+    FOREIGN KEY (UserID) REFERENCES Users(UserID),
+    FOREIGN KEY (ClientID) REFERENCES Clients(ClientID)
+);

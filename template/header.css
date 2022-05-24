@@ -1,0 +1,25 @@
+nav {
+    padding: 0 !important;
+}
+
+.navbar-brand {
+    font-size: 2em;
+    font-weight: 800;
+    margin-left: 1em;
+}
+
+.nav-link {
+    color: white !important;
+    font-weight: 700 !important;
+}
+
+.nav-link:hover {
+    color: #adb5bd !important;
+}
+
+.navbar-nav button {
+    padding: 0 !important;
+    margin-left: 0.5em;
+    margin-right: 1em;
+}
+

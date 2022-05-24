@@ -2,7 +2,7 @@
 
   session_start();
   if(isset($_SESSION['nombre'])) {
-    header("location: home.php");
+    header("location: home.php"); //debe ir a home
   }
 
 ?>
@@ -26,7 +26,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
 
   <!-- Mis estilos -->
-  <link rel="stylesheet" href="style_index.css">
+  <link rel="stylesheet" href="log&sign/style_index.css">
 </head>
 
 <body>
@@ -35,12 +35,12 @@
     <div class="card" id="cardIngreso">
       <h5 class="card-title">Iniciar Sesión</h5>
       <div class="card-body">
-        <form class="row g-3" action="login.php" method="post">
+        <form class="row g-3" action="log&sign/login.php" method="post">
           <input type="text" placeholder="Correo" name="correo" required>
           <input type="password" placeholder="Contraseña"name="contra" required>
           <button type="submit" value="Ingresar" class="btn btn-primary rounded-pill">Ingresar</button>
           <hr>
-          <button onclick="registro()" class="btn btn-success btn-registro rounded-pill">Crear cuenta nueva</button>
+          <button onclick="registro()" type="button" class="btn btn-success btn-registro rounded-pill">Crear cuenta nueva</button>
         </form>      
       </div>
     </div>
@@ -49,20 +49,20 @@
     <div class="card" id="cardRegistro">
       <h5 class="card-title">Registrarse</h5>
       <div class="card-body"> 
-        <form class="row g-3" action="register.php" method="post">
+        <form class="row g-3" action="log&sign/register.php" method="post">
           <input type="text" placeholder="Nombre" name="nombre" required>
           <input type="text" placeholder="RFC" name="rfc" required>
           <input type="text" placeholder="Correo" name="correo" required>
           <input type="password" placeholder="Contraseña" name="contrasena" required>
           <button type="submit" value="Registrarte" class="btn btn-success btn-registro rounded-pill">Registrar</button>
-          <a id="link" href="#">¿Ya tienes una cuenta?</a>
+          <a href="index.php">¿Ya tienes una cuenta?</a>
         </form>      
       </div>
     </div>     
   </div>
 
   <!-- Mis scripts --> 
-  <script src="script.js"></script>
+  <script src="log&sign/script_index.js"></script>
   <!-- Option 1: Bootstrap Bundle with Popper -->
   <script
     src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta1/js/bootstrap.bundle.min.js"></script>
