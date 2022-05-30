@@ -3,57 +3,58 @@
 
 
 
-    <div class="container-fluid mt-5">
+    <div class="container-fluid mt-1">
         <div class="row justify-content-center">
           <div class="col-md-9">
-            <h3 class="mt-2">Egresos / Gastos</h3>
+            <h3 class="mt-2"><a href="main_prov.php"> < </a>Egresos / Gastos</h3>
 
               <!-- Button trigger modal -->
               <button type="button" class="btn btn-success my-3" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                 Nuevo
               </button>
-            
-            <table id="gastos" class="display compact">
-              <thead>
-                <tr>
-                  <th scope="col">#</th>
-                  <th scope="col">Nombre</th>
-                  <th scope="col">Concepto</th>
-                  <th scope="col">RFC</th>
-                  <th scope="col">Subtotal</th>
-                  <th scope="col">Descuento</th>
-                  <th scope="col">IVA</th>
-                  <th scope="col">Total</th>
-                  <th class="text-center" scope="col">Acciones</th>
-                </tr>
-              </thead>
-              <tbody>
-                <?php 
-                $query = "SELECT * FROM `providers`";
-                $resultado = mysqli_query($conexion,$query);
+            <div class="table-responsive">
+              <table id="gastos" class="display compact table">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Concepto</th>
+                    <th scope="col">RFC</th>
+                    <th scope="col">Subtotal</th>
+                    <th scope="col">Descuento</th>
+                    <th scope="col">IVA</th>
+                    <th scope="col">Total</th>
+                    <th class="text-center" scope="col">Acciones</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <?php 
+                  $query = "SELECT * FROM `providers`";
+                  $resultado = mysqli_query($conexion,$query);
 
-                while($row = mysqli_fetch_array($resultado)) { ?>
-                <tr>
-                  <td><?php echo $row['ProviderID']?></td>
-                  <td><?php echo $row['nombre']?></td>
-                  <td><?php echo $row['concepto']?></td>
-                  <td><?php echo $row['rfc']?></td>
-                  <td><?php echo $row['subtotal']?></td>
-                  <td><?php echo $row['descuento']?></td>
-                  <td><?php echo $row['iva']?></td>
-                  <td><?php echo $row['total']?></td>
-                  <td class="text-center">
-                      <a href="edit_prov.php?id=<?php echo $row['ProviderID']?>" class="btn btn-secondary">
-                        <i class="fas fa-marker"></i>
-                      </a>
-                      <a href="delete_prov.php?id=<?php echo $row['ProviderID']?>" class="btn btn-danger">
-                        <i class="far fa-trash-alt"></i>
-                      </a>
-                  </td>
-                </tr>
-                <?php } ?>
-              </tbody>
-            </table>
+                  while($row = mysqli_fetch_array($resultado)) { ?>
+                  <tr>
+                    <td><?php echo $row['ProviderID']?></td>
+                    <td><?php echo $row['nombre']?></td>
+                    <td><?php echo $row['concepto']?></td>
+                    <td><?php echo $row['rfc']?></td>
+                    <td><?php echo $row['subtotal']?></td>
+                    <td><?php echo $row['descuento']?></td>
+                    <td><?php echo $row['iva']?></td>
+                    <td><?php echo $row['total']?></td>
+                    <td class="text-center">
+                        <a href="edit_prov.php?id=<?php echo $row['ProviderID']?>" class="btn btn-secondary">
+                          <i class="fas fa-marker"></i>
+                        </a>
+                        <a href="delete_prov.php?id=<?php echo $row['ProviderID']?>" class="btn btn-danger">
+                          <i class="far fa-trash-alt"></i>
+                        </a>
+                    </td>
+                  </tr>
+                  <?php } ?>
+                </tbody>
+              </table>
+            </div>          
           </div>
 
           <!-- Modal -->
@@ -121,14 +122,7 @@
                       </div>
                     </div></div>
                   </form>
-
                 </div>
-
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary">Understood</button>
-                </div>
-
               </div>
             </div>
           </div>

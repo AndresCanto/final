@@ -10,13 +10,13 @@
     
     if (mysqli_num_rows($result) == 1) {
       $row = mysqli_fetch_array($result);
-      $nombre = $row['nombreP1'];
-      $concepto = $row['conceptoP1'];
-      $rfc = $row['rfcP1'];
-      $subtotal = $row['subtotalP1'];
-      $descuento = $row['descuentoP1'];
-      $iva = $row['ivaP1'];
-      $total = $row['totalP1'];
+      $nombre = $row['nombre'];
+      $concepto = $row['concepto'];
+      $rfc = $row['rfc'];
+      $subtotal = $row['subtotal'];
+      $descuento = $row['descuento'];
+      $iva = $row['iva'];
+      $total = $row['total'];
     } 
   }
 
@@ -31,7 +31,8 @@
     $total = $_POST['totalP1'];
 
     $consulta = "UPDATE providers SET nombre = '$nombre', concepto = '$concepto', rfc = '$rfc', subtotal = '$subtotal', 
-    descuento = '$descuento' , iva = '$iva' , total = '$total'";
+    descuento = '$descuento' , iva = '$iva' , total = '$total' WHERE ProviderID = $id";
+
     mysqli_query($conexion, $consulta);
 
     header("location: main_prov.php");
@@ -99,7 +100,7 @@
                 </div>
                 <div class="col-md-3 pt-3">
                   <div class="d-grid pt-3">
-                      <button class="btn btn-secondary" onclick="window.loaction.href='main_prov.php'"><i class="fa-solid fa-right-to-bracket"></i></button>
+                      <button class="btn btn-secondary" onclick="window.location.href='main_prov.php'"><i class="fa-solid fa-right-to-bracket"></i></button>
                   </div>
                 </div>
               </div>

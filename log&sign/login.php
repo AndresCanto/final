@@ -20,7 +20,7 @@
     else{
         echo '
             <script>
-                alert("Usuario no existe, por favor verifique los datos");
+                alert("Uno o ambos datos no son correctos, favor verifique los datos");
                 window.location = "../index.php";
             </script>
         ';

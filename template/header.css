@@ -4,7 +4,7 @@ nav {
 
 .navbar-brand {
     font-size: 2em;
-    font-weight: 800;
+    font-weight: 700;
     margin-left: 1em;
 }
 
@@ -17,8 +17,9 @@ nav {
     color: #adb5bd !important;
 }
 
-.navbar-nav button {
-    padding: 0 !important;
+.navbar-nav >button {
+    padding:  0 .5em !important;
+    font-weight: 700 !important;
     margin-left: 0.5em;
     margin-right: 1em;
 }

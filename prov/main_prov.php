@@ -9,47 +9,51 @@
             <div class="card">
               <div class="card-header">Egresos / Gastos</div>
               <div class="card-body p-4">
-                <table class="table">
-                  <thead>
-                    <tr>
-                      <th scope="col">#</th>
-                      <th scope="col">Nombre</th>
-                      <th scope="col">Concepto</th>
-                      <th scope="col">RFC</th>
-                      <th scope="col">Subtotal</th>
-                      <th scope="col">Descuento</th>
-                      <th scope="col">IVA</th>
-                      <th scope="col">Total</th>
-                      <th class="text-center" scope="col">Acciones</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <?php 
-                    $query = "SELECT * FROM `providers`";
-                    $resultado = mysqli_query($conexion,$query);
+                <div class="table-wrapper">
+                <div class="table-responsive" style="max-height: 500px;  overflow: auto;">
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Concepto</th>
+                        <th scope="col">RFC</th>
+                        <th scope="col">Subtotal</th>
+                        <th scope="col">Descuento</th>
+                        <th scope="col">IVA</th>
+                        <th scope="col">Total</th>
+                        <th class="text-center" scope="col">Acciones</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <?php 
+                      $query = "SELECT * FROM `providers`";
+                      $resultado = mysqli_query($conexion,$query);
 
-                    while($row = mysqli_fetch_array($resultado)) { ?>
-                    <tr>
-                      <td><?php echo $row['ProviderID']?></td>
-                      <td><?php echo $row['nombre']?></td>
-                      <td><?php echo $row['concepto']?></td>
-                      <td><?php echo $row['rfc']?></td>
-                      <td><?php echo $row['subtotal']?></td>
-                      <td><?php echo $row['descuento']?></td>
-                      <td><?php echo $row['iva']?></td>
-                      <td><?php echo $row['total']?></td>
-                      <td class="text-center">
-                          <a href="edit_prov.php?id=<?php echo $row['ProviderID']?>" class="btn btn-secondary">
-                            <i class="fas fa-marker"></i>
-                          </a>
-                          <a href="delete_prov.php?id=<?php echo $row['ProviderID']?>" class="btn btn-danger">
-                            <i class="far fa-trash-alt"></i>
-                          </a>
-                      </td>
-                    </tr>
-                    <?php } ?>
-                  </tbody>
-                </table>
+                      while($row = mysqli_fetch_array($resultado)) { ?>
+                      <tr>
+                        <th scope="row"><?php echo $row['ProviderID']?></th>
+                        <td><?php echo $row['nombre']?></td>
+                        <td><?php echo $row['concepto']?></td>
+                        <td><?php echo $row['rfc']?></td>
+                        <td><?php echo $row['subtotal']?></td>
+                        <td><?php echo $row['descuento']?></td>
+                        <td><?php echo $row['iva']?></td>
+                        <td><?php echo $row['total']?></td>
+                        <td class="text-center d-flex">
+                            <a href="edit_prov.php?id=<?php echo $row['ProviderID']?>" class="btn btn-secondary">
+                              <i class="fas fa-marker"></i>
+                            </a>
+                            <a href="delete_prov.php?id=<?php echo $row['ProviderID']?>" class="btn btn-danger">
+                              <i class="far fa-trash-alt"></i>
+                            </a>
+                        </td>
+                      </tr>
+                      <?php } ?>
+                    </tbody>
+                  </table>
+                </div>
+                </div>
               </div>
             </div>
           </div>

@@ -1,10 +1,13 @@
-body,html {
-    /*background-image: url('notebook-natural-laptop-macbook.jpg');*/
-    background-color: red !important;/*rgba(0, 0, 0, 0.4);*/
+body {
+    background-image: url('notebook-natural-laptop-macbook.jpg');
+    background-color: rgba(0, 0, 0, 0.4);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
 }
 
 .card {
-    margin: auto auto;
+    margin: 150px 200px;
     padding: 0 5px;
     width: 100%;
     max-width: 330px;
@@ -21,6 +24,7 @@ body,html {
 }
 
 input {
+    height: 2.5em;
     border-radius: 50px;
     border: 1px solid grey;
 }
@@ -28,5 +32,9 @@ input {
 .btn-registro {
     background-color: #27e660 !important;
     border: 1px solid #27e660;
-    padding: 10px !important;
+    padding: 6px !important;
+}
+
+.botons {
+    font-size: 20px;
 }

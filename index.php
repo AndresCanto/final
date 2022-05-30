@@ -38,9 +38,9 @@
         <form class="row g-3" action="log&sign/login.php" method="post">
           <input type="text" placeholder="Correo" name="correo" required>
           <input type="password" placeholder="Contraseña"name="contra" required>
-          <button type="submit" value="Ingresar" class="btn btn-primary rounded-pill">Ingresar</button>
+          <button type="submit" value="Ingresar" class="btn btn-primary rounded-pill botons">Ingresar</button>
           <hr>
-          <button onclick="registro()" type="button" class="btn btn-success btn-registro rounded-pill">Crear cuenta nueva</button>
+          <button onclick="registro()" type="button" class="btn btn-success btn-registro rounded-pill botons">Crear cuenta nueva</button>
         </form>      
       </div>
     </div>
@@ -54,7 +54,7 @@
           <input type="text" placeholder="RFC" name="rfc" required>
           <input type="text" placeholder="Correo" name="correo" required>
           <input type="password" placeholder="Contraseña" name="contrasena" required>
-          <button type="submit" value="Registrarte" class="btn btn-success btn-registro rounded-pill">Registrar</button>
+          <button type="submit" value="Registrarte" class="btn btn-success btn-registro rounded-pill botons">Registrar</button>
           <a href="index.php">¿Ya tienes una cuenta?</a>
         </form>      
       </div>
