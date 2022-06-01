@@ -29,6 +29,7 @@
         <div class="collapse mx-auto navbar-collapse" id="navbarID">
           <div class="navbar-nav ms-auto">
             <a class="nav-link active" aria-current="page" href="/final/home.php">Inicio</a>
+            <a class="nav-link active" aria-current="page" href="/final/about.php">About</a>
             <a class="nav-link" aria-current="page" href="/final/prov/main_prov.php">Gastos</a>
             <a class="nav-link" aria-current="page" href="/final/prov/main_prov_v2.php">Gastos 2.0</a>
             <button class="btn btn-outline-secondary" id="navCerrar" onclick="window.location.href='/final/template/cerrar.php'">Cerrar</button>

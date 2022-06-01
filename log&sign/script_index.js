@@ -1,6 +1,7 @@
 //declaracion de variables
 const cardIngreso = document.getElementById("cardIngreso");
 const cardRegistro = document.getElementById("cardRegistro");
+let titel = document.getElementsByTagName("title");
 
 //declaracion de funciones
 function registro() {

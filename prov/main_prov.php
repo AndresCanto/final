@@ -14,7 +14,6 @@
                   <table class="table">
                     <thead>
                       <tr>
-                        <th scope="col">#</th>
                         <th scope="col">Nombre</th>
                         <th scope="col">Concepto</th>
                         <th scope="col">RFC</th>
@@ -32,7 +31,6 @@
 
                       while($row = mysqli_fetch_array($resultado)) { ?>
                       <tr>
-                        <th scope="row"><?php echo $row['ProviderID']?></th>
                         <td><?php echo $row['nombre']?></td>
                         <td><?php echo $row['concepto']?></td>
                         <td><?php echo $row['rfc']?></td>
